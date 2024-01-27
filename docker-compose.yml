@@ -1,0 +1,14 @@
+version: "3"
+services:
+  mysqldb:
+      image: mysql:latest
+      container_name: "mysqldb"
+      ports:
+          - 3307:3306
+  ssprojectmanagement:
+      image: sachinsoni16/ss-project-management:1.0.0
+      container_name: "ssprojectmanagement"
+      ports:
+          - 8585:8585
+      links:
+           - mysqldb
